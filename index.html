@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --asfalto:#0E1114; --asfalto-2:#161B21; --painel:#1B222A; --borda:#28313B;
+  --asfalto:#0D0B07; --asfalto-2:#131009; --painel:#1A1710; --borda:#2E2A1C;
   --placa:#FFC400; --placa-esc:#E0AC00; --verde:#2FD072; --verde-esc:#22A85A;
   --gelo:#F5F6F7; --cinza:#8A939E; --cinza-esc:#5D6771; --alerta:#FF5B4C;
 }
@@ -26,7 +26,7 @@ img{display:block;max-width:100%;height:auto}
 @media(max-width:560px){.topbar{font-size:12px;padding:10px}}
 
 /* HERO */
-.hero{padding:34px 0 12px;text-align:center}
+.hero{padding:34px 0 12px;text-align:center;background:radial-gradient(ellipse 120% 90% at 50% -5%, rgba(255,196,0,.28) 0%, rgba(255,150,0,.10) 45%, transparent 72%)}
 .hero-logo{height:44px;margin:0 auto 22px}
 @media(max-width:560px){.hero-logo{height:36px;margin-bottom:18px}}
 .hero h1{font-family:'Barlow Semi Condensed';font-weight:800;font-size:clamp(32px,6.6vw,58px);line-height:1.02;letter-spacing:-.5px;margin-bottom:14px;max-width:860px;margin-left:auto;margin-right:auto}
@@ -50,6 +50,10 @@ img{display:block;max-width:100%;height:auto}
 section{padding:54px 0}
 @media(max-width:560px){section{padding:42px 0}}
 .alt{background:var(--asfalto-2);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+/* seção de preços com tom âmbar profundo */
+#planos{background:linear-gradient(180deg,#1A1500 0%,#131009 100%);border-color:#2E2A1C}
+/* seção CHEGA com glow vermelho-âmbar */
+.chega-wrap{background:radial-gradient(ellipse 100% 120% at 50% 100%,rgba(255,100,0,.10) 0%,transparent 70%)}
 .eyebrow{font-family:'Barlow Condensed';font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:var(--placa);margin-bottom:9px;text-align:center}
 h2.tit{font-family:'Barlow Semi Condensed';font-weight:800;font-size:clamp(26px,4.8vw,40px);line-height:1.05;letter-spacing:-.3px;text-align:center;margin-bottom:10px}
 h2.tit .hl{color:var(--placa)}
