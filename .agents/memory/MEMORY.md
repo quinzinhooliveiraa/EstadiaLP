@@ -1,0 +1,1 @@
+- [Vídeos de interfaces escuras](video-interface-encoding.md) — preserve as dimensões originais; detectores de barras podem cortar conteúdo de UIs com fundo preto.

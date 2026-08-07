@@ -72,8 +72,8 @@ h2.tit .hl{color:var(--placa)}
 @media(max-width:560px){.slide{width:240px}.trilho{animation-duration:32s}}
 
 /* VÍDEO */
-.video-box{max-width:760px;margin:0 auto;border-radius:18px;overflow:hidden;border:1px solid var(--borda);background:var(--asfalto-2);position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
-.video-box iframe,.video-box video{width:100%;height:100%;border:0;display:block}
+.video-box{width:min(100%,340px);margin:0 auto;border-radius:22px;overflow:hidden;border:8px solid #23292F;background:#000;position:relative;aspect-ratio:888/1920;box-shadow:0 30px 70px -22px rgba(0,0,0,.85)}
+.video-box iframe,.video-box video{width:100%;height:100%;border:0;display:block;object-fit:contain;background:#000}
 .video-ph{text-align:center;padding:24px}
 .video-ph .play{width:70px;height:70px;border-radius:50%;background:var(--placa);color:var(--asfalto);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px}
 .video-ph b{display:block;font-family:'Barlow Semi Condensed';font-weight:700;font-size:19px;margin-bottom:4px}
@@ -301,12 +301,15 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
     <h2 class="tit">Assim é o app <span class="hl">na prática</span></h2>
     <p class="sub">Sem menu complicado, sem cadastro gigante. Veja a rotina inteira, do CHEGUEI até o documento pronto.</p>
     <div class="video-box">
-      <!-- SUBSTITUIR por: <iframe src="URL_DO_VIDEO" allowfullscreen></iframe> -->
-      <div class="video-ph">
-        <div class="play">&#9654;</div>
-        <b>Vídeo do app em uso</b>
-        <span>Espaço reservado . troque este bloco pelo embed do vídeo</span>
-      </div>
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="attached_assets/estadia-app-demo-poster.jpg"
+        aria-label="Demonstração do app ESTADIA em uso">
+        <source src="attached_assets/estadia-app-demo.mp4" type="video/mp4">
+        Seu navegador não consegue reproduzir este vídeo. Abra em um navegador atualizado.
+      </video>
     </div>
   </div>
 </section>
