@@ -51,7 +51,7 @@ section{padding:54px 0}
 @media(max-width:560px){section{padding:42px 0}}
 .alt{background:var(--asfalto-2);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
 /* seção de preços com tom âmbar profundo */
-#planos{background:linear-gradient(180deg,#1A1500 0%,#131009 100%);border-color:#2E2A1C}
+#planos{background:var(--asfalto-2);border-color:var(--borda)}
 /* seção CHEGA com glow vermelho-âmbar */
 .chega-wrap{background:radial-gradient(ellipse 100% 120% at 50% 100%,rgba(255,100,0,.10) 0%,transparent 70%)}
 .eyebrow{font-family:'Barlow Condensed';font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:var(--placa);margin-bottom:9px;text-align:center}
@@ -125,6 +125,16 @@ h2.tit .hl{color:var(--placa)}
 .cf-txt{padding:16px 18px}
 .cf-txt b{display:block;font-family:'Barlow Semi Condensed';font-weight:700;font-size:17.5px;margin-bottom:3px}
 .cf-txt span{font-size:14.5px;color:var(--cinza);line-height:1.4}
+.recursos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
+.recurso-card{background:var(--asfalto);border:1px solid var(--borda);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s}
+.recurso-card:hover{border-color:var(--placa);transform:translateY(-2px)}
+.recurso-card img{width:100%;height:170px;object-fit:cover;object-position:center;background:#080808;border-bottom:1px solid var(--borda)}
+.recurso-card.historico img{object-fit:contain;object-position:top}
+.recurso-copy{padding:16px 17px 18px}
+.recurso-copy b{display:block;font-family:'Barlow Semi Condensed';font-weight:700;font-size:18px;margin-bottom:4px}
+.recurso-copy span{font-size:14.5px;color:var(--cinza);line-height:1.4}
+@media(max-width:760px){.recursos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.recursos-grid{grid-template-columns:1fr}.recurso-card img{height:190px}}
 
 .lista{display:flex;flex-direction:column;gap:10px;max-width:680px;margin:0 auto}
 .li{display:flex;align-items:center;gap:12px;background:var(--asfalto-2);border:1px solid var(--borda);border-radius:12px;padding:15px 18px;font-size:15.5px;color:var(--gelo)}
@@ -227,6 +237,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
     <div class="eyebrow">Quem já provou, recebeu</div>
     <h2 class="tit">A estadia <span class="hl">é sua por direito</span></h2>
     <p class="sub">Decisões reais, motoristas reais. O que separa quem recebeu de quem ficou sem foi uma coisa só: ter a prova da hora.</p>
+    <div class="center" style="margin-top:24px"><a href="#planos" class="cta">QUERO PROVAR E RECEBER</a></div>
   </div>
   <div class="carrossel">
     <div class="trilho">
@@ -291,6 +302,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       </div>
     </div>
     <p class="disc">Estimativa de orientação. Tarifa de referência: R$ 1,90 por tonelada/hora após as 5h iniciais (Lei 13.103/2015 . art. 11 §5º da Lei 11.442/07 . reajuste anual pelo INPC). O documento oficial é gerado no app com a tarifa vigente.</p>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO CALCULAR E COBRAR</a></div>
   </div>
 </section>
 
@@ -311,6 +323,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
         Seu navegador não consegue reproduzir este vídeo. Abra em um navegador atualizado.
       </video>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO VER NO MEU CELULAR</a></div>
   </div>
 </section>
 
@@ -324,6 +337,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="tela"><div class="tela-ic">&#9201;</div><b>2. Espera</b><span>O relógio corre. Passou das 5h, o valor sobe na tela.</span></div>
       <div class="tela"><div class="tela-ic">&#128228;</div><b>3. Cobra</b><span>Gera o documento e manda no WhatsApp.</span></div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO COMEÇAR AGORA</a></div>
   </div>
 </section>
 
@@ -337,6 +351,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="card"><div class="card-ic">&#128181;</div><div><b>R$ 1,90 por ton/hora</b><span>Valor oficial de referência, reajustado todo ano pelo INPC.</span></div></div>
       <div class="card"><div class="card-ic">&#128273;</div><div><b>A prova é o que decide</b><span>Em toda decisão favorável, a palavra-chave é "comprovado".</span></div></div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO ESSA PROVA</a></div>
   </div>
 </section>
 
@@ -351,16 +366,42 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="li"><span class="ck">&check;</span> Trabalha por conta ou dirige pra transportadora pequena</div>
       <div class="li"><span class="ck">&check;</span> Quer algo simples, que funcione com uma mão só</div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO O APP NO CAMINHÃO</a></div>
   </div>
 </section>
 
-<!-- 9. TUDO QUE VOCÊ VAI RECEBER (com espaço pra fotos) -->
+<!-- 9. TUDO QUE VOCÊ VAI RECEBER -->
 <section class="alt">
   <div class="wrap">
     <div class="eyebrow">Tudo que você vai receber</div>
     <h2 class="tit">O que o <span class="hl">ESTADIA</span> entrega</h2>
     <p class="sub">Não é curso, não é planilha. É a ferramenta que monta a prova e a cobrança por você.</p>
-    <div style="max-width:680px;margin:0 auto 28px"><img src="app-features.png" alt="O que o ESTADIA entrega" style="width:100%;border-radius:18px;box-shadow:0 20px 60px -20px rgba(0,0,0,.8);"></div>
+    <div class="recursos-grid">
+      <article class="recurso-card">
+        <img src="attached_assets/features/registro-gps.png" alt="Tela de registro de chegada por GPS">
+        <div class="recurso-copy"><b>Registro por GPS</b><span>Marca a hora e o local em que você chegou, sem depender da portaria.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/contador-automatico.png" alt="Tela do contador automático de 5 horas">
+        <div class="recurso-copy"><b>Contador automático</b><span>Conta as 5 horas de prazo e mostra quando o valor começa a subir.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/documento-pronto.png" alt="Tela do documento de cobrança pronto">
+        <div class="recurso-copy"><b>Documento pronto</b><span>Gera a cobrança formal com o valor calculado e a lei citada.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/link-verificacao.png" alt="Tela do link de verificação online">
+        <div class="recurso-copy"><b>Link de verificação</b><span>Compartilha um link para qualquer pessoa conferir o registro.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/fotos-anexadas.png" alt="Tela de fotos anexadas da portaria">
+        <div class="recurso-copy"><b>Fotos anexadas</b><span>Junta fotos da portaria e do local direto no documento da estadia.</span></div>
+      </article>
+      <article class="recurso-card historico">
+        <img src="attached_assets/features/historico.png" alt="Tela de histórico das estadias">
+        <div class="recurso-copy"><b>Histórico</b><span>Guarda todas as estadias, valores recuperados e o que ainda falta receber.</span></div>
+      </article>
+    </div>
     <div class="center" style="margin-top:28px"><a href="#planos" class="cta">QUERO ESSE APP NO MEU CELULAR</a></div>
   </div>
 </section>
@@ -378,6 +419,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="li"><span class="x">&times;</span> pagar nada pra testar</div>
     </div>
     <p class="sub" style="margin-top:24px;margin-bottom:0">O app faz o trabalho pesado. Você só aperta um botão quando chega.</p>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO COBRAR SEM COMPLICAÇÃO</a></div>
   </div>
 </section>
 
@@ -452,6 +494,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="passo"><div class="passo-n">2</div><div><b>Cadastra com seu telefone</b><span>Só o número. Chega um código por SMS e pronto, tá dentro.</span></div></div>
       <div class="passo"><div class="passo-n">3</div><div><b>Já pode usar</b><span>Na próxima parada, aperta CHEGUEI e o app começa a trabalhar por você.</span></div></div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO INSTALAR AGORA</a></div>
   </div>
 </section>
 

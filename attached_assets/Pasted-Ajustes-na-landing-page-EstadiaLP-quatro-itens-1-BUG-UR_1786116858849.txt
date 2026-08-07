@@ -1,0 +1,50 @@
+Ajustes na landing page (EstadiaLP), quatro itens:
+
+## 1. BUG URGENTE — data não aparece
+A barra de urgência no topo mostra "OFERTA ESPECIAL DISPONÍVEL APENAS
+HOJE, --/--/----". A data não está sendo calculada. Corrigir para
+mostrar a data atual (dia/mês/ano), atualizada automaticamente a cada
+visita, igual ao comportamento original em JavaScript puro que existia
+antes de virar app React (calcular no client com `new Date()` dentro de
+um useEffect ou hook equivalente).
+
+## 2. "O que você recebe" — trocar imagem única por cards individuais
+Hoje essa seção usa uma imagem estática (app-features.png) com tudo
+dentro. Trocar por um grid de cards, cada um com:
+- Uma imagem/foto no topo do card (screenshot real do app relacionado
+  àquele recurso, ou o mockup que já temos)
+- Um título abaixo da imagem
+- Uma descrição curta abaixo do título
+
+Manter os 6 recursos que já estão definidos (Registro por GPS, Contador
+automático, Documento pronto, Link de verificação, Fotos anexadas,
+Histórico). Cada card com sua própria imagem, não uma imagem
+compartilhada — no estilo do card "Baralho Sistêmico... + Manual" do
+site de referência (imagem em cima, texto explicativo embaixo).
+
+## 3. Repetir o CTA com mais frequência
+Adicionar o botão de CTA ("QUERO COMEÇAR A COBRAR" ou variação) ao final
+de CADA seção principal da página (depois de: como funciona, prova
+social, calculadora, vídeo, por que funciona, para quem é, o que
+recebe, você não precisa) — não só nos 2-3 lugares atuais. Pode variar
+o texto do botão entre as repetições para não ficar repetitivo
+(ex.: "QUERO PROVAR E RECEBER", "QUERO ESSE APP NO CELULAR", "QUERO
+COMEÇAR AGORA").
+
+## 4. Reduzir o amarelo sólido em blocos grandes
+O amarelo em áreas grandes (fundo cheio) está cansando a vista. Reduzir
+o USO DE ÁREA PREENCHIDA em amarelo:
+- Botões continuam amarelos (isso funciona, é o CTA)
+- Mas fundos grandes preenchidos em amarelo sólido (ex.: blocos de
+  destaque, cards de preço) devem usar o amarelo só como BORDA, ÍCONE
+  ou TEXTO em vez de preencher toda a área — trocar o preenchimento por
+  fundo escuro (var(--asfalto-2) ou similar) com borda/detalhe amarelo.
+- Manter o amarelo como cor de identidade, só reduzir a ÁREA de amarelo
+  sólido na tela.
+
+Não mexer na garantia por enquanto — o usuário vai enviar uma imagem de
+selo para essa seção depois.
+
+Ao final: git add -A && git commit -m "fix data + cards individuais +
+CTA repetido + reduz área amarela" && git push origin main. Confirmar
+hash do commit.
