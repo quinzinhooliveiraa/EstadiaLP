@@ -1,0 +1,85 @@
+Adicionar uma seção de depoimentos (prova social) na landing EstadiaLP,
+
+lna sessao o carrossel de prova social existente (ou substituindo os
+
+placeholders atuais do carrossel).
+
+## Formato
+
+Cards de depoimento, cada um com:
+
+- Nome + cidade/estado em destaque (menor, cor de apoio)
+
+- O texto do depoimento entre aspas
+
+- Um ícone ou avatar genérico (inicial do nome num círculo, ou ícone de
+
+  caminhão) — NÃO usar foto de pessoa real
+
+- 5 estrelas amarelas no topo do card (opcional, estilo review)
+
+Podem rolar num carrossel horizontal (como o atual) ou ficar num grid
+
+2-3 colunas. Manter o visual da página (asfalto escuro, detalhes
+
+amarelos, sem área grande de amarelo sólido).
+
+## Os 7 depoimentos (usar exatamente estes textos)
+
+1. Celso M. — Rondonópolis, MT
+
+"Fiquei 14h parado pra descarregar. Antes eu só xingava e engolia. Dessa
+
+vez apertei o CHEGUEI, o app marcou tudo, e mandei o documento. Pela
+
+primeira vez eu tinha como provar."
+
+2. Antônio R. — Sorriso, MT
+
+"Caminhão não é armazém deles. Fico 20h com a carga em cima e eles acham
+
+normal. Agora eu registro a hora certinha e não é mais a minha palavra
+
+contra a deles."
+
+3. Josué P. — Uberlândia, MG
+
+"O que me pegou foi ser simples. Eu não entendo de app, mas isso aqui é
+
+só um botão. Cheguei, apertei, pronto. No sol, com uma mão, dá pra usar."
+
+4. Valdir S. — Cascavel, PR
+
+"Sempre me falaram da lei, mas ninguém dizia COMO cobrar. O documento
+
+sai pronto, com a lei escrita e o horário provado. Foi isso que faltava
+
+esse tempo todo."
+
+5. Reginaldo A. — Anápolis, GO
+
+"Advogado é caro e demora. Eu queria uma coisa que eu mesmo resolvo.
+
+Gerei o documento, mandei no WhatsApp do responsável, e a conversa mudou
+
+de tom na hora."
+
+6. Marcos V. — Paranaguá, PR
+
+"A gente é humilhado em muito lugar que chega. Ter isso no celular me deu
+
+respaldo. Não é briga, é documento. Eles veem que você sabe o que está
+
+fazendo."
+
+7. Edson L. — Petrolina, PE
+
+"Testei de graça achando que era enrolação. Gerei a primeira cobrança sem
+
+pagar nada e vi funcionar. Aí sim eu assinei."
+
+
+
+Ao final: git add -A && git commit -m "add depoimentos ilustrativos +
+
+aviso" && git push origin main. Confirmar o hash do commit.
