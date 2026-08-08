@@ -7,6 +7,7 @@
 <meta name="description" content="Ficou mais de 5h parado no pátio? A lei manda o embarcador pagar. O ESTADIA registra a hora por GPS e gera a prova pra você cobrar.">
 <meta property="og:title" content="Cada vez que te deixam parado, tem R$ 200 a R$ 800 escapando do seu bolso.">
 <meta property="og:description" content="Passou de 5h esperando carga ou descarga? É lei: eles pagam. O app prova a hora e monta a cobrança.">
+<link rel="icon" type="image/png" href="attached_assets/ChatGPT_Image_7_de_ago._de_2026__12_16_13-removebg-preview_1786159662931.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
@@ -33,6 +34,8 @@ img{display:block;max-width:100%;height:auto}
 .hero h1 .hl{color:var(--placa)}
 .quebra{font-size:clamp(15.5px,2.2vw,19px);color:var(--cinza);max-width:620px;margin:0 auto 26px}
 .quebra b{color:var(--gelo);font-weight:600}
+.hero-phone{width:min(100%,260px);margin:4px auto 24px;filter:drop-shadow(0 28px 34px rgba(0,0,0,.72))}
+.hero-phone img{width:100%;height:auto}
 .produto{display:flex;justify-content:center;margin:0 auto 22px;max-width:300px}
 .fone{border:9px solid #23292F;border-radius:34px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.85);background:#000;line-height:0}
 .legenda{font-size:15.5px;color:var(--cinza);max-width:620px;margin:0 auto 22px}
@@ -59,32 +62,6 @@ h2.tit{font-family:'Barlow Semi Condensed';font-weight:800;font-size:clamp(26px,
 h2.tit .hl{color:var(--placa)}
 .sub{color:var(--cinza);font-size:16.5px;text-align:center;max-width:640px;margin:0 auto 30px}
 .center{text-align:center}
-
-/* DEPOIMENTOS ILUSTRATIVOS */
-.depoimentos{margin:34px auto 0;max-width:940px}
-.depoimentos-tit{font-family:'Barlow Semi Condensed';font-weight:800;font-size:clamp(22px,3.8vw,30px);text-align:center;margin-bottom:18px}
-.depoimentos-tit .hl{color:var(--placa)}
-.depoimentos-slider{display:flex;align-items:center;gap:12px}
-.depoimentos-viewport{min-width:0;overflow:hidden}
-.depoimentos-grid{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x}
-.depoimentos-grid::-webkit-scrollbar{display:none}
-.depoimento{display:flex;flex:0 0 calc((100% - 28px)/3);flex-direction:column;min-height:240px;padding:18px;border:1px solid var(--borda);border-radius:15px;background:linear-gradient(145deg,var(--painel),var(--asfalto-2));box-shadow:0 14px 30px -24px rgba(0,0,0,.9);scroll-snap-align:start}
-.depoimento-seta{width:42px;height:42px;flex:0 0 42px;border:1px solid var(--borda);border-radius:50%;background:var(--painel);color:var(--placa);font-size:28px;line-height:1;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
-.depoimento-seta:hover{background:rgba(255,196,0,.12);border-color:var(--placa);transform:scale(1.05)}
-.depoimento-seta:focus-visible{outline:2px solid var(--placa);outline-offset:3px}
-.depoimento-seta:disabled{opacity:.3;cursor:default;transform:none}
-.estrelas{color:var(--placa);font-size:15px;letter-spacing:2px;line-height:1;margin-bottom:13px}
-.depoimento blockquote{flex:1;color:var(--gelo);font-size:15px;line-height:1.43;margin:0 0 17px}
-.depoimento blockquote::before,.depoimento blockquote::after{color:var(--placa);font-family:Georgia,serif;font-size:25px;line-height:0;vertical-align:-5px}
-.depoimento blockquote::before{content:'“';margin-right:2px}
-.depoimento blockquote::after{content:'”';margin-left:2px}
-.depoimento-autor{display:flex;align-items:center;gap:10px;border-top:1px solid var(--borda);padding-top:12px}
-.depoimento-avatar{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,196,0,.14);border:1px solid rgba(255,196,0,.5);color:var(--placa);font-family:'Barlow Semi Condensed';font-weight:800;font-size:17px}
-.depoimento-autor b{display:block;font-family:'Barlow Semi Condensed';font-size:16px;line-height:1.05}
-.depoimento-autor span{display:block;color:var(--cinza);font-size:12.5px;margin-top:3px}
-.depoimentos-aviso{color:var(--cinza-esc);font-size:12px;text-align:center;margin:16px auto 0}
-@media(max-width:760px){.depoimento{flex-basis:calc((100% - 14px)/2)}}
-@media(max-width:560px){.depoimentos-slider{display:block}.depoimentos-viewport{margin:0 -2px}.depoimentos-grid{padding-bottom:8px}.depoimento{flex-basis:100%;min-height:0}.depoimento-seta{display:none}}
 
 /* VÍDEO */
 .video-box{width:min(100%,340px);margin:0 auto;border-radius:22px;overflow:hidden;border:8px solid #23292F;background:#000;position:relative;aspect-ratio:888/1920;box-shadow:0 30px 70px -22px rgba(0,0,0,.85)}
@@ -222,6 +199,9 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
   <div class="wrap">
     <div class="hero-pill">🚛 App para motoristas · GPS · Documento oficial</div>
     <h1>Cada vez que te deixam parado no pátio, tem <span class="hl">R$ 200 a R$ 800</span> escapando do seu bolso.</h1>
+    <div class="hero-phone">
+      <img src="attached_assets/ChatGPT_Image_7_de_ago._de_2026__12_16_13-removebg-preview_1786159662931.png" alt="Tela de histórico do app ESTADIA em um celular">
+    </div>
     <p class="quebra">Você já sabe que a lei existe. O problema sempre foi <b>provar a hora</b>. É isso que o ESTADIA faz por você, sem advogado e sem briga na portaria.</p>
     
     <p class="legenda">Este é o documento que sai pronto no seu celular: <b>valor calculado, horário provado por GPS e a lei citada</b>. É só mandar no WhatsApp de quem te segurou.</p>
@@ -260,6 +240,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
         <div class="slide"><img src="data:image/jpeg;base64,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" alt="Prova social 6"></div>
     </div>
   </div> -->
+  <!-- Depoimentos ilustrativos removidos da apresentação.
   <div class="depoimentos" id="depoimentos">
     <h3 class="depoimentos-tit">Quem já começou a <span class="hl">provar</span></h3>
     <div class="depoimentos-slider">
@@ -307,6 +288,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
     </div>
     <p class="depoimentos-aviso">Depoimentos ilustrativos para demonstração da proposta do produto.</p>
   </div>
+  -->
 </section>
 
 <!-- 4. CALCULADORA -->
@@ -559,25 +541,6 @@ const ton=document.getElementById('ton'), hrs=document.getElementById('hrs');
 const vl=document.getElementById('vl'), dt=document.getElementById('dt');
 const ex=document.getElementById('ex'), aviso=document.getElementById('aviso');
 const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-
-const depoimentosGrid=document.querySelector('.depoimentos-grid');
-const depoimentoSetas=document.querySelectorAll('.depoimento-seta');
-if(depoimentosGrid && depoimentoSetas.length){
-  const atualizarSetas=()=>{
-    const max=depoimentosGrid.scrollWidth-depoimentosGrid.clientWidth-2;
-    depoimentoSetas[0].disabled=depoimentosGrid.scrollLeft<=2;
-    depoimentoSetas[1].disabled=depoimentosGrid.scrollLeft>=max;
-  };
-  depoimentoSetas.forEach(botao=>botao.addEventListener('click',()=>{
-    const card=depoimentosGrid.querySelector('.depoimento');
-    if(!card) return;
-    const gap=parseFloat(getComputedStyle(depoimentosGrid).gap)||0;
-    depoimentosGrid.scrollBy({left:(card.offsetWidth+gap)*Number(botao.dataset.direcao),behavior:'smooth'});
-  }));
-  depoimentosGrid.addEventListener('scroll',atualizarSetas,{passive:true});
-  window.addEventListener('resize',atualizarSetas);
-  atualizarSetas();
-}
 
 function calc(){
   const t=parseFloat(ton.value)||0, h=parseFloat(hrs.value)||0;
