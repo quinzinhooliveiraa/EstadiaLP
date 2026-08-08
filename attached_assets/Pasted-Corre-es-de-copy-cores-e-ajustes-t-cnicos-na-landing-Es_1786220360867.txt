@@ -1,0 +1,78 @@
+Correções de copy, cores e ajustes técnicos na landing EstadiaLP.
+Não mexer em nada além do listado.
+
+## 1. BUG data (urgente)
+A barra de urgência mostra "--/--/----". Corrigir usando useEffect com
+new Date() pra mostrar a data atual no formato DD/MM/AAAA.
+
+## 2. Subheadline — copy mais agressiva
+Trocar:
+"Você já sabe que a lei existe. O problema sempre foi provar a hora.
+É isso que o ESTADIA faz por você, sem advogado e sem briga na portaria."
+
+Por:
+"Eles nunca pagam porque sabem que você não tem como provar.
+O ESTADIA muda isso — GPS, documento e a lei do seu lado."
+
+## 3. "Por que isso funciona" — tom menos jurídico
+Trocar os títulos dos 4 cards por versões mais diretas e na língua
+do caminhoneiro:
+
+- "É lei desde 2015" → "Não é favor deles. É lei."
+- "A Justiça condena" → "Tribunal já mandou pagar. Mais de uma vez."
+- "R$ 1,90 por ton/hora" → "O valor é oficial. Reajusta todo ano."
+- "A prova é o que decide" → "Quem tinha o registro, ganhou."
+
+## 4. Garantia — dar mais destaque visual
+A seção de garantia está pequena e sem impacto. Transformar em bloco
+de destaque com:
+- Caixa com borda amarela e fundo levemente diferente
+- Ícone de escudo grande (🛡) centralizado acima do título
+- Título maior: "Risco zero pra você"
+- Subtítulo: "A primeira cobrança é grátis. Sem cartão, sem pegadinha.
+  Testa, vê funcionar, e só depois decide se quer o PRO."
+- Manter o texto atual embaixo
+
+## 5. "O que o ESTADIA entrega" — cards individuais
+Substituir a imagem app-features.png por 6 cards em grid 2 colunas:
+- Área de imagem no topo (placeholder escuro com texto indicando qual
+  screenshot colocar depois)
+- Título
+- Descrição curta
+
+Os 6: Registro por GPS, Contador automático, Documento pronto,
+Link de verificação, Fotos anexadas, Histórico de estadias.
+
+## 6. CTA repetido após cada seção principal
+Adicionar botão CTA ao final de cada seção, variando o texto:
+- Após depoimentos: "QUERO PROVAR E RECEBER"
+- Após calculadora: "QUERO COMEÇAR A COBRAR"
+- Após vídeo: "QUERO ESSE APP NO CELULAR"
+- Após "3 toques": "COMEÇAR GRÁTIS AGORA"
+- Após "por que funciona": "QUERO PROVAR E RECEBER"
+- Após "pra você que": "QUERO ESSE APP NO CELULAR"
+
+## 7. Aviso dos depoimentos
+Adicionar logo abaixo da seção de depoimentos, pequeno e discreto:
+"Depoimentos ilustrativos, representando situações reais de uso.
+Casos reais de motoristas serão publicados com autorização."
+
+## 8. Juntar seções finais
+Juntar "CHEGA" e "Da próxima parada" em uma seção final única:
+- "CHEGA" em vermelho grande
+- "de trabalhar de graça pra quem te deixa parado." embaixo
+- Depois o título "Da próxima parada, você tem a prova."
+- CTA final
+
+## 9. Cores — reduzir área de amarelo sólido
+Amarelo permitido em: botões, bordas, ícones, textos de destaque,
+números da headline.
+Proibido em: fundos grandes preenchidos. Trocar por fundo escuro
+(var(--asfalto-2) ou equivalente) com borda ou detalhe amarelo.
+Botões continuam amarelos.
+
+## 10. Logo no rodapé
+A logo no rodapé está quebrada. Substituir pela mesma logo do header.
+
+Ao final: git add -A && git commit -m "copy + cores + ajustes tecnicos"
+&& git push origin main. Confirmar hash do commit.
