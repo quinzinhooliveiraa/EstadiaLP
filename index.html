@@ -7,7 +7,6 @@
 <meta name="description" content="Ficou mais de 5h parado no pátio? A lei manda o embarcador pagar. O ESTADIA registra a hora por GPS e gera a prova pra você cobrar.">
 <meta property="og:title" content="Cada vez que te deixam parado, tem R$ 200 a R$ 800 escapando do seu bolso.">
 <meta property="og:description" content="Passou de 5h esperando carga ou descarga? É lei: eles pagam. O app prova a hora e monta a cobrança.">
-<link rel="icon" type="image/png" href="attached_assets/ChatGPT_Image_7_de_ago._de_2026__12_16_13-removebg-preview_1786159662931.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
@@ -34,8 +33,6 @@ img{display:block;max-width:100%;height:auto}
 .hero h1 .hl{color:var(--placa)}
 .quebra{font-size:clamp(15.5px,2.2vw,19px);color:var(--cinza);max-width:620px;margin:0 auto 26px}
 .quebra b{color:var(--gelo);font-weight:600}
-.hero-phone{width:min(100%,260px);margin:4px auto 24px;filter:drop-shadow(0 28px 34px rgba(0,0,0,.72))}
-.hero-phone img{width:100%;height:auto}
 .produto{display:flex;justify-content:center;margin:0 auto 22px;max-width:300px}
 .fone{border:9px solid #23292F;border-radius:34px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.85);background:#000;line-height:0}
 .legenda{font-size:15.5px;color:var(--cinza);max-width:620px;margin:0 auto 22px}
@@ -54,7 +51,7 @@ section{padding:54px 0}
 @media(max-width:560px){section{padding:42px 0}}
 .alt{background:var(--asfalto-2);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
 /* seção de preços com tom âmbar profundo */
-#planos{background:linear-gradient(180deg,#1A1500 0%,#131009 100%);border-color:#2E2A1C}
+#planos{background:var(--asfalto-2);border-color:var(--borda)}
 /* seção CHEGA com glow vermelho-âmbar */
 .chega-wrap{background:radial-gradient(ellipse 100% 120% at 50% 100%,rgba(255,100,0,.10) 0%,transparent 70%)}
 .eyebrow{font-family:'Barlow Condensed';font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;color:var(--placa);margin-bottom:9px;text-align:center}
@@ -62,6 +59,17 @@ h2.tit{font-family:'Barlow Semi Condensed';font-weight:800;font-size:clamp(26px,
 h2.tit .hl{color:var(--placa)}
 .sub{color:var(--cinza);font-size:16.5px;text-align:center;max-width:640px;margin:0 auto 30px}
 .center{text-align:center}
+
+/* CARROSSEL DE PROVA SOCIAL */
+.carrossel{overflow:hidden;position:relative;margin:0 -20px;padding:4px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.trilho{display:flex;gap:14px;width:max-content;animation:rolar 42s linear infinite}
+.carrossel:hover .trilho{animation-play-state:paused}
+@keyframes rolar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.slide{flex:0 0 auto;width:290px;border-radius:14px;overflow:hidden;border:1px solid var(--borda);background:var(--asfalto)}
+.slide img{width:100%;height:auto;display:block}
+@media(max-width:560px){.slide{width:240px}.trilho{animation-duration:32s}}
 
 /* VÍDEO */
 .video-box{width:min(100%,340px);margin:0 auto;border-radius:22px;overflow:hidden;border:8px solid #23292F;background:#000;position:relative;aspect-ratio:888/1920;box-shadow:0 30px 70px -22px rgba(0,0,0,.85)}
@@ -117,6 +125,16 @@ h2.tit .hl{color:var(--placa)}
 .cf-txt{padding:16px 18px}
 .cf-txt b{display:block;font-family:'Barlow Semi Condensed';font-weight:700;font-size:17.5px;margin-bottom:3px}
 .cf-txt span{font-size:14.5px;color:var(--cinza);line-height:1.4}
+.recursos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
+.recurso-card{background:var(--asfalto);border:1px solid var(--borda);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s}
+.recurso-card:hover{border-color:var(--placa);transform:translateY(-2px)}
+.recurso-card img{width:100%;height:170px;object-fit:cover;object-position:center;background:#080808;border-bottom:1px solid var(--borda)}
+.recurso-card.historico img{object-fit:contain;object-position:top}
+.recurso-copy{padding:16px 17px 18px}
+.recurso-copy b{display:block;font-family:'Barlow Semi Condensed';font-weight:700;font-size:18px;margin-bottom:4px}
+.recurso-copy span{font-size:14.5px;color:var(--cinza);line-height:1.4}
+@media(max-width:760px){.recursos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.recursos-grid{grid-template-columns:1fr}.recurso-card img{height:190px}}
 
 .lista{display:flex;flex-direction:column;gap:10px;max-width:680px;margin:0 auto}
 .li{display:flex;align-items:center;gap:12px;background:var(--asfalto-2);border:1px solid var(--borda);border-radius:12px;padding:15px 18px;font-size:15.5px;color:var(--gelo)}
@@ -199,9 +217,6 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
   <div class="wrap">
     <div class="hero-pill">🚛 App para motoristas · GPS · Documento oficial</div>
     <h1>Cada vez que te deixam parado no pátio, tem <span class="hl">R$ 200 a R$ 800</span> escapando do seu bolso.</h1>
-    <div class="hero-phone">
-      <img src="attached_assets/ChatGPT_Image_7_de_ago._de_2026__12_16_13-removebg-preview_1786159662931.png" alt="Tela de histórico do app ESTADIA em um celular">
-    </div>
     <p class="quebra">Você já sabe que a lei existe. O problema sempre foi <b>provar a hora</b>. É isso que o ESTADIA faz por você, sem advogado e sem briga na portaria.</p>
     
     <p class="legenda">Este é o documento que sai pronto no seu celular: <b>valor calculado, horário provado por GPS e a lei citada</b>. É só mandar no WhatsApp de quem te segurou.</p>
@@ -216,14 +231,14 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
   </div>
 </header>
 
-<!-- 3. PROVA SOCIAL -->
+<!-- 3. PROVA SOCIAL (carrossel rolando) -->
 <section class="alt">
   <div class="wrap">
     <div class="eyebrow">Quem já provou, recebeu</div>
     <h2 class="tit">A estadia <span class="hl">é sua por direito</span></h2>
     <p class="sub">Decisões reais, motoristas reais. O que separa quem recebeu de quem ficou sem foi uma coisa só: ter a prova da hora.</p>
+    <div class="center" style="margin-top:24px"><a href="#planos" class="cta">QUERO PROVAR E RECEBER</a></div>
   </div>
-  <!-- Conteúdo visual antigo mantido apenas como referência histórica; não é renderizado.
   <div class="carrossel">
     <div class="trilho">
         <div class="slide"><img src="data:image/jpeg;base64,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" alt="Prova social 1"></div>
@@ -239,56 +254,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
         <div class="slide"><img src="data:image/jpeg;base64,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" alt="Prova social 5"></div>
         <div class="slide"><img src="data:image/jpeg;base64,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" alt="Prova social 6"></div>
     </div>
-  </div> -->
-  <!-- Depoimentos ilustrativos removidos da apresentação.
-  <div class="depoimentos" id="depoimentos">
-    <h3 class="depoimentos-tit">Quem já começou a <span class="hl">provar</span></h3>
-    <div class="depoimentos-slider">
-      <button class="depoimento-seta" type="button" data-direcao="-1" aria-label="Ver depoimentos anteriores">&#8249;</button>
-      <div class="depoimentos-viewport">
-        <div class="depoimentos-grid">
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>Fiquei 14h parado pra descarregar. Antes eu só xingava e engolia. Dessa vez apertei o CHEGUEI, o app marcou tudo, e mandei o documento. Pela primeira vez eu tinha como provar.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">C</div><div><b>Celso M.</b><span>Rondonópolis, MT</span></div></div>
-      </article>
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>Caminhão não é armazém deles. Fico 20h com a carga em cima e eles acham normal. Agora eu registro a hora certinha e não é mais a minha palavra contra a deles.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">A</div><div><b>Antônio R.</b><span>Sorriso, MT</span></div></div>
-      </article>
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>O que me pegou foi ser simples. Eu não entendo de app, mas isso aqui é só um botão. Cheguei, apertei, pronto. No sol, com uma mão, dá pra usar.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">J</div><div><b>Josué P.</b><span>Uberlândia, MG</span></div></div>
-      </article>
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>Sempre me falaram da lei, mas ninguém dizia COMO cobrar. O documento sai pronto, com a lei escrita e o horário provado. Foi isso que faltava esse tempo todo.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">V</div><div><b>Valdir S.</b><span>Cascavel, PR</span></div></div>
-      </article>
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>Advogado é caro e demora. Eu queria uma coisa que eu mesmo resolvo. Gerei o documento, mandei no WhatsApp do responsável, e a conversa mudou de tom na hora.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">R</div><div><b>Reginaldo A.</b><span>Anápolis, GO</span></div></div>
-      </article>
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>A gente é humilhado em muito lugar que chega. Ter isso no celular me deu respaldo. Não é briga, é documento. Eles veem que você sabe o que está fazendo.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">M</div><div><b>Marcos V.</b><span>Paranaguá, PR</span></div></div>
-      </article>
-      <article class="depoimento">
-        <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
-        <blockquote>Testei de graça achando que era enrolação. Gerei a primeira cobrança sem pagar nada e vi funcionar. Aí sim eu assinei.</blockquote>
-        <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">E</div><div><b>Edson L.</b><span>Petrolina, PE</span></div></div>
-      </article>
-        </div>
-      </div>
-      <button class="depoimento-seta" type="button" data-direcao="1" aria-label="Ver próximos depoimentos">&#8250;</button>
-    </div>
-    <p class="depoimentos-aviso">Depoimentos ilustrativos para demonstração da proposta do produto.</p>
   </div>
-  -->
 </section>
 
 <!-- 4. CALCULADORA -->
@@ -336,6 +302,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       </div>
     </div>
     <p class="disc">Estimativa de orientação. Tarifa de referência: R$ 1,90 por tonelada/hora após as 5h iniciais (Lei 13.103/2015 . art. 11 §5º da Lei 11.442/07 . reajuste anual pelo INPC). O documento oficial é gerado no app com a tarifa vigente.</p>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO CALCULAR E COBRAR</a></div>
   </div>
 </section>
 
@@ -356,6 +323,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
         Seu navegador não consegue reproduzir este vídeo. Abra em um navegador atualizado.
       </video>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO VER NO MEU CELULAR</a></div>
   </div>
 </section>
 
@@ -369,6 +337,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="tela"><div class="tela-ic">&#9201;</div><b>2. Espera</b><span>O relógio corre. Passou das 5h, o valor sobe na tela.</span></div>
       <div class="tela"><div class="tela-ic">&#128228;</div><b>3. Cobra</b><span>Gera o documento e manda no WhatsApp.</span></div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO COMEÇAR AGORA</a></div>
   </div>
 </section>
 
@@ -382,6 +351,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="card"><div class="card-ic">&#128181;</div><div><b>R$ 1,90 por ton/hora</b><span>Valor oficial de referência, reajustado todo ano pelo INPC.</span></div></div>
       <div class="card"><div class="card-ic">&#128273;</div><div><b>A prova é o que decide</b><span>Em toda decisão favorável, a palavra-chave é "comprovado".</span></div></div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO ESSA PROVA</a></div>
   </div>
 </section>
 
@@ -396,16 +366,42 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="li"><span class="ck">&check;</span> Trabalha por conta ou dirige pra transportadora pequena</div>
       <div class="li"><span class="ck">&check;</span> Quer algo simples, que funcione com uma mão só</div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO O APP NO CAMINHÃO</a></div>
   </div>
 </section>
 
-<!-- 9. TUDO QUE VOCÊ VAI RECEBER (com espaço pra fotos) -->
+<!-- 9. TUDO QUE VOCÊ VAI RECEBER -->
 <section class="alt">
   <div class="wrap">
     <div class="eyebrow">Tudo que você vai receber</div>
     <h2 class="tit">O que o <span class="hl">ESTADIA</span> entrega</h2>
     <p class="sub">Não é curso, não é planilha. É a ferramenta que monta a prova e a cobrança por você.</p>
-    <div style="max-width:680px;margin:0 auto 28px"><img src="app-features.png" alt="O que o ESTADIA entrega" style="width:100%;border-radius:18px;box-shadow:0 20px 60px -20px rgba(0,0,0,.8);"></div>
+    <div class="recursos-grid">
+      <article class="recurso-card">
+        <img src="attached_assets/features/registro-gps.png" alt="Tela de registro de chegada por GPS">
+        <div class="recurso-copy"><b>Registro por GPS</b><span>Marca a hora e o local em que você chegou, sem depender da portaria.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/contador-automatico.png" alt="Tela do contador automático de 5 horas">
+        <div class="recurso-copy"><b>Contador automático</b><span>Conta as 5 horas de prazo e mostra quando o valor começa a subir.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/documento-pronto.png" alt="Tela do documento de cobrança pronto">
+        <div class="recurso-copy"><b>Documento pronto</b><span>Gera a cobrança formal com o valor calculado e a lei citada.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/link-verificacao.png" alt="Tela do link de verificação online">
+        <div class="recurso-copy"><b>Link de verificação</b><span>Compartilha um link para qualquer pessoa conferir o registro.</span></div>
+      </article>
+      <article class="recurso-card">
+        <img src="attached_assets/features/fotos-anexadas.png" alt="Tela de fotos anexadas da portaria">
+        <div class="recurso-copy"><b>Fotos anexadas</b><span>Junta fotos da portaria e do local direto no documento da estadia.</span></div>
+      </article>
+      <article class="recurso-card historico">
+        <img src="attached_assets/features/historico.png" alt="Tela de histórico das estadias">
+        <div class="recurso-copy"><b>Histórico</b><span>Guarda todas as estadias, valores recuperados e o que ainda falta receber.</span></div>
+      </article>
+    </div>
     <div class="center" style="margin-top:28px"><a href="#planos" class="cta">QUERO ESSE APP NO MEU CELULAR</a></div>
   </div>
 </section>
@@ -423,6 +419,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="li"><span class="x">&times;</span> pagar nada pra testar</div>
     </div>
     <p class="sub" style="margin-top:24px;margin-bottom:0">O app faz o trabalho pesado. Você só aperta um botão quando chega.</p>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO COBRAR SEM COMPLICAÇÃO</a></div>
   </div>
 </section>
 
@@ -497,6 +494,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="passo"><div class="passo-n">2</div><div><b>Cadastra com seu telefone</b><span>Só o número. Chega um código por SMS e pronto, tá dentro.</span></div></div>
       <div class="passo"><div class="passo-n">3</div><div><b>Já pode usar</b><span>Na próxima parada, aperta CHEGUEI e o app começa a trabalhar por você.</span></div></div>
     </div>
+    <div class="center" style="margin-top:26px"><a href="#planos" class="cta">QUERO INSTALAR AGORA</a></div>
   </div>
 </section>
 
@@ -541,7 +539,6 @@ const ton=document.getElementById('ton'), hrs=document.getElementById('hrs');
 const vl=document.getElementById('vl'), dt=document.getElementById('dt');
 const ex=document.getElementById('ex'), aviso=document.getElementById('aviso');
 const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-
 function calc(){
   const t=parseFloat(ton.value)||0, h=parseFloat(hrs.value)||0;
   if(t<=0||h<=0){vl.textContent='R$ 0,00';dt.textContent='Preenche os dois campos pra ver o valor.';ex.textContent='';aviso.classList.remove('on');return;}

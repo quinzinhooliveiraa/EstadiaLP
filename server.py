@@ -4,9 +4,6 @@ import os
 
 PORT = 5000
 
-class ReusableTCPServer(socketserver.TCPServer):
-    allow_reuse_address = True
-
 class Handler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/' or self.path == '':
@@ -18,6 +15,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-with ReusableTCPServer(("0.0.0.0", PORT), Handler) as httpd:
+with socketserver.TCPServer(("0.0.0.0", PORT), Handler) as httpd:
     print(f"Serving on port {PORT}")
     httpd.serve_forever()

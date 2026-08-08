@@ -1,6 +1,6 @@
 Adicionar uma seção de depoimentos (prova social) na landing EstadiaLP,
 
-lna sessao o carrossel de prova social existente (ou substituindo os
+logo após o carrossel de prova social existente (ou substituindo os
 
 placeholders atuais do carrossel).
 
@@ -77,9 +77,3 @@ fazendo."
 "Testei de graça achando que era enrolação. Gerei a primeira cobrança sem
 
 pagar nada e vi funcionar. Aí sim eu assinei."
-
-
-
-Ao final: git add -A && git commit -m "add depoimentos ilustrativos +
-
-aviso" && git push origin main. Confirmar o hash do commit.
