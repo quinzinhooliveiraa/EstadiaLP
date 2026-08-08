@@ -48,6 +48,7 @@ img{display:block;max-width:100%;height:auto}
 .cta-nota{font-size:13.5px;color:var(--verde);margin-top:13px;font-weight:600}
 .cta-nota span{color:var(--cinza);font-weight:400;display:block;margin-top:3px;font-size:12.5px}
 @media(max-width:560px){.cta{display:block;width:100%;padding:17px 20px}}
+.section-cta{margin-top:28px}
 
 section{padding:54px 0}
 @media(max-width:560px){section{padding:42px 0}}
@@ -306,6 +307,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       </div>
       <button class="depoimento-seta" type="button" data-direcao="1" aria-label="Ver próximos depoimentos">&#8250;</button>
     </div>
+    <div class="center section-cta"><a href="#planos" class="cta">QUERO PROVAR E RECEBER</a></div>
   </div>
 </section>
 
@@ -354,6 +356,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       </div>
     </div>
     <p class="disc">Estimativa de orientação. Tarifa de referência: R$ 1,90 por tonelada/hora após as 5h iniciais (Lei 13.103/2015 . art. 11 §5º da Lei 11.442/07 . reajuste anual pelo INPC). O documento oficial é gerado no app com a tarifa vigente.</p>
+    <div class="center section-cta"><a href="#planos" class="cta">QUERO COMEÇAR A COBRAR</a></div>
   </div>
 </section>
 
@@ -374,6 +377,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
         Seu navegador não consegue reproduzir este vídeo. Abra em um navegador atualizado.
       </video>
     </div>
+    <div class="center section-cta"><a href="#planos" class="cta">QUERO ESSE APP NO CELULAR</a></div>
   </div>
 </section>
 
@@ -387,6 +391,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="tela"><div class="tela-ic">&#9201;</div><b>2. Espera</b><span>O relógio corre. Passou das 5h, o valor sobe na tela.</span></div>
       <div class="tela"><div class="tela-ic">&#128228;</div><b>3. Cobra</b><span>Gera o documento e manda no WhatsApp.</span></div>
     </div>
+    <div class="center section-cta"><a href="#planos" class="cta">COMEÇAR GRÁTIS AGORA</a></div>
   </div>
 </section>
 
@@ -400,6 +405,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="card"><div class="card-ic">&#128181;</div><div><b>R$ 1,90 por ton/hora</b><span>Valor oficial de referência, reajustado todo ano pelo INPC.</span></div></div>
       <div class="card"><div class="card-ic">&#128273;</div><div><b>A prova é o que decide</b><span>Em toda decisão favorável, a palavra-chave é "comprovado".</span></div></div>
     </div>
+    <div class="center section-cta"><a href="#planos" class="cta">QUERO PROVAR E RECEBER</a></div>
   </div>
 </section>
 
@@ -414,6 +420,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
       <div class="li"><span class="ck">&check;</span> Trabalha por conta ou dirige pra transportadora pequena</div>
       <div class="li"><span class="ck">&check;</span> Quer algo simples, que funcione com uma mão só</div>
     </div>
+    <div class="center section-cta"><a href="#planos" class="cta">QUERO ESSE APP NO CELULAR</a></div>
   </div>
 </section>
 
@@ -445,7 +452,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
 </section>
 
 <!-- 15. CHEGA + CTA FINAL (juntos) -->
-<section class="alt">
+<section class="alt chega-wrap">
   <div class="wrap center">
     <div class="chega">CHEGA</div>
     <p class="chega-sub">de trabalhar de graça pra quem te deixa parado.</p>
@@ -546,13 +553,18 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
 
 <script>
 /* data dinâmica na barra de urgência */
-(function(){
+function atualizarDataHoje(){
   const d=new Date();
   const dd=String(d.getDate()).padStart(2,'0');
   const mm=String(d.getMonth()+1).padStart(2,'0');
   const el=document.getElementById('dataHoje');
   if(el) el.textContent=dd+'/'+mm+'/'+d.getFullYear();
-})();
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',atualizarDataHoje,{once:true});
+}else{
+  atualizarDataHoje();
+}
 
 const TARIFA=1.90, PRAZO=5;
 const ton=document.getElementById('ton'), hrs=document.getElementById('hrs');
