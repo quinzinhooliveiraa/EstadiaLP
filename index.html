@@ -511,6 +511,61 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
   </div>
 </section>
 
+<!-- PROVA SOCIAL APÓS OS PLANOS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Quem já provou, recebeu</div>
+    <h2 class="tit">A estadia <span class="hl">é sua por direito</span></h2>
+    <p class="sub">Decisões reais, motoristas reais. O que separa quem recebeu de quem ficou sem foi uma coisa só: ter a prova da hora.</p>
+    <div class="depoimentos" id="depoimentos-planos">
+      <div class="depoimentos-slider">
+        <button class="depoimento-seta" type="button" data-direcao="-1" aria-label="Ver depoimentos anteriores">&#8249;</button>
+        <div class="depoimentos-viewport">
+          <div class="depoimentos-grid">
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>Fiquei 14h parado pra descarregar. Antes eu só xingava e engolia. Dessa vez apertei o CHEGUEI, o app marcou tudo, e mandei o documento. Pela primeira vez eu tinha como provar.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">C</div><div><b>Celso M.</b><span>Rondonópolis, MT</span></div></div>
+            </article>
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>Caminhão não é armazém deles. Fico 20h com a carga em cima e eles acham normal. Agora eu registro a hora certinha e não é mais a minha palavra contra a deles.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">A</div><div><b>Antônio R.</b><span>Sorriso, MT</span></div></div>
+            </article>
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>O que me pegou foi ser simples. Eu não entendo de app, mas isso aqui é só um botão. Cheguei, apertei, pronto. No sol, com uma mão, dá pra usar.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">J</div><div><b>Josué P.</b><span>Uberlândia, MG</span></div></div>
+            </article>
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>Sempre me falaram da lei, mas ninguém dizia COMO cobrar. O documento sai pronto, com a lei escrita e o horário provado. Foi isso que faltava esse tempo todo.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">V</div><div><b>Valdir S.</b><span>Cascavel, PR</span></div></div>
+            </article>
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>Advogado é caro e demora. Eu queria uma coisa que eu mesmo resolvo. Gerei o documento, mandei no WhatsApp do responsável, e a conversa mudou de tom na hora.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">R</div><div><b>Reginaldo A.</b><span>Anápolis, GO</span></div></div>
+            </article>
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>A gente é humilhado em muito lugar que chega. Ter isso no celular me deu respaldo. Não é briga, é documento. Eles veem que você sabe o que está fazendo.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">M</div><div><b>Marcos V.</b><span>Paranaguá, PR</span></div></div>
+            </article>
+            <article class="depoimento">
+              <div class="estrelas" aria-label="5 estrelas">★★★★★</div>
+              <blockquote>Testei de graça achando que era enrolação. Gerei a primeira cobrança sem pagar nada e vi funcionar. Aí sim eu assinei.</blockquote>
+              <div class="depoimento-autor"><div class="depoimento-avatar" aria-hidden="true">E</div><div><b>Edson L.</b><span>Petrolina, PE</span></div></div>
+            </article>
+          </div>
+        </div>
+        <button class="depoimento-seta" type="button" data-direcao="1" aria-label="Ver próximos depoimentos">&#8250;</button>
+      </div>
+      <div class="center section-cta"><a href="#planos" class="cta">QUERO PROVAR E RECEBER</a></div>
+    </div>
+  </div>
+</section>
+
 <!-- 12. PRIMEIRO USO -->
 <section>
   <div class="wrap">
@@ -581,9 +636,10 @@ const vl=document.getElementById('vl'), dt=document.getElementById('dt');
 const ex=document.getElementById('ex'), aviso=document.getElementById('aviso');
 const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 
-const depoimentosGrid=document.querySelector('.depoimentos-grid');
-const depoimentoSetas=document.querySelectorAll('.depoimento-seta');
-if(depoimentosGrid && depoimentoSetas.length){
+document.querySelectorAll('.depoimentos').forEach(depoimentos=>{
+  const depoimentosGrid=depoimentos.querySelector('.depoimentos-grid');
+  const depoimentoSetas=depoimentos.querySelectorAll('.depoimento-seta');
+  if(!depoimentosGrid || depoimentoSetas.length<2) return;
   const atualizarSetas=()=>{
     const max=depoimentosGrid.scrollWidth-depoimentosGrid.clientWidth-2;
     depoimentoSetas[0].disabled=depoimentosGrid.scrollLeft<=2;
@@ -598,7 +654,7 @@ if(depoimentosGrid && depoimentoSetas.length){
   depoimentosGrid.addEventListener('scroll',atualizarSetas,{passive:true});
   window.addEventListener('resize',atualizarSetas);
   atualizarSetas();
-}
+});
 
 function calc(){
   const t=parseFloat(ton.value)||0, h=parseFloat(hrs.value)||0;
