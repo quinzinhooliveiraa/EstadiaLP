@@ -358,7 +358,7 @@ footer p{font-size:13px;line-height:1.6;max-width:720px}
         </div>
       </div>
     </div>
-    <p class="disc">Estimativa de orientação. Tarifa de referência: R$ 1,90 por tonelada/hora após as 5h iniciais (Lei 13.103/2015 . art. 11 §5º da Lei 11.442/07 . reajuste anual pelo INPC). O documento oficial é gerado no app com a tarifa vigente.</p>
+    <p class="disc" id="tarifaDisclaimer">Estimativa de orientação. Tarifa de referência: ... por tonelada/hora após as 5h iniciais (Lei 13.103/2015 · reajuste anual pelo INPC).</p>
     <div class="center section-cta"><a href="#planos" class="cta">QUERO COMEÇAR A COBRAR</a></div>
   </div>
 </section>
@@ -628,11 +628,28 @@ if(document.readyState==='loading'){
   atualizarDataHoje();
 }
 
-const TARIFA=1.90, PRAZO=5;
+const TARIFA_FALLBACK=2.50, PRAZO=5, TARIFA_URL='https://app.cobrarestadia.com.br/api/tarifas/vigente';
+let tarifa=null;
 const ton=document.getElementById('ton'), hrs=document.getElementById('hrs');
 const vl=document.getElementById('vl'), dt=document.getElementById('dt');
 const ex=document.getElementById('ex'), aviso=document.getElementById('aviso');
+const tarifaDisclaimer=document.getElementById('tarifaDisclaimer');
 const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+
+function atualizarTarifa(valor){
+  tarifa=valor;
+  tarifaDisclaimer.textContent='Estimativa de orientação. Tarifa de referência: '+brl(tarifa)+' por tonelada/hora após as 5h iniciais (Lei 13.103/2015 · reajuste anual pelo INPC).';
+  calc();
+}
+
+fetch(TARIFA_URL)
+  .then(response=>{if(!response.ok) throw new Error('Falha ao buscar tarifa');return response.json();})
+  .then(data=>{
+    const valor=Number(data.valor_ton_hora);
+    if(!Number.isFinite(valor)||valor<=0) throw new Error('Tarifa inválida');
+    atualizarTarifa(valor);
+  })
+  .catch(()=>atualizarTarifa(TARIFA_FALLBACK));
 
 document.querySelectorAll('.depoimentos').forEach(depoimentos=>{
   const depoimentosGrid=depoimentos.querySelector('.depoimentos-grid');
@@ -656,14 +673,16 @@ document.querySelectorAll('.depoimentos').forEach(depoimentos=>{
 
 function calc(){
   const t=parseFloat(ton.value)||0, h=parseFloat(hrs.value)||0;
+  if(tarifa===null){vl.textContent='...';dt.textContent='';ex.textContent='';aviso.classList.remove('on');return;}
   if(t<=0||h<=0){vl.textContent='R$ 0,00';dt.textContent='Preenche os dois campos pra ver o valor.';ex.textContent='';aviso.classList.remove('on');return;}
   if(h<=PRAZO){vl.textContent=brl(0);dt.innerHTML='Ainda dentro das <b>5 horas</b> de prazo.';ex.textContent='';aviso.classList.add('on');aviso.innerHTML='Faltam <b>'+(PRAZO-h).toLocaleString('pt-BR')+'h</b> pro relógio começar a correr. Da 5&ordf; hora em diante, cada hora conta.';return;}
   aviso.classList.remove('on');
-  const hd=h-PRAZO, total=t*TARIFA*hd;
+  const hd=h-PRAZO, total=t*tarifa*hd;
   vl.textContent=brl(total);
-  dt.innerHTML=t.toLocaleString('pt-BR')+' ton &times; '+brl(TARIFA)+' &times; <b>'+hd.toLocaleString('pt-BR')+'h</b> além do prazo';
+  dt.innerHTML=t.toLocaleString('pt-BR')+' ton &times; '+brl(tarifa)+' &times; <b>'+hd.toLocaleString('pt-BR')+'h</b> além do prazo';
   ex.textContent='Ficou '+h.toLocaleString('pt-BR')+'h parado . as 5 primeiras não contam';
 }
+calc();
 document.querySelectorAll('#pTon .preset').forEach(b=>b.addEventListener('click',()=>{ton.value=b.dataset.v;document.querySelectorAll('#pTon .preset').forEach(x=>x.classList.remove('on'));b.classList.add('on');calc();}));
 document.querySelectorAll('#pHrs .preset').forEach(b=>b.addEventListener('click',()=>{hrs.value=b.dataset.v;document.querySelectorAll('#pHrs .preset').forEach(x=>x.classList.remove('on'));b.classList.add('on');calc();}));
 ton.addEventListener('input',()=>{document.querySelectorAll('#pTon .preset').forEach(x=>x.classList.remove('on'));calc();});
